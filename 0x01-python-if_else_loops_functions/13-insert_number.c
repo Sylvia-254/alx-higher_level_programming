@@ -11,7 +11,7 @@
  *
  * Return: pointer to the new head
  */
-listint_t *insert_node(listint_t **head, int number);
+listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *current = *head;
 	listint_t *new = NULL;
@@ -21,7 +21,7 @@ listint_t *insert_node(listint_t **head, int number);
 		return (NULL);
 
 	new = malloc(sizeof(listint_t));
-	if (!new)
+	 if(!new)
 		return (NULL);
 
 	new->n = number;
