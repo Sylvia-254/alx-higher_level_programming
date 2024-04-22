@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-# 0-square.py by Joe Femi Akharume
-"""Defines a square """
+"""A module for square"""
 
 class Square:
-"""Does nothing"""
+"""Represent a square."""
 pass
