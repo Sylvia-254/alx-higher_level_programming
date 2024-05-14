@@ -1,10 +1,12 @@
 #!/usr/bin/python3
-def remove_char_at(str, n):
-    new = ''
-    i= 0
-    for char in str:
-        if i != n:
-            new += str[i]
-        i += 1
-    return (new)
+# 101-remove_char_at.py
 
+"""Create copy of string, remove character at the position n"""
+
+
+def remove_char_at(str, n):
+    strcpy = ""
+    for i in range(len(str)):
+        if i != n:
+            strcpy += str[i]
+    return (strcpy)
