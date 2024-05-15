@@ -1,7 +1,11 @@
 #!/usr/bin/python3
-'''Module for inherits_from method.'''
+"""methods module"""
 
 
 def inherits_from(obj, a_class):
-    '''Determines if an object is a true subclass of a class.'''
-    return isinstance(obj, a_class) and type(obj) != a_class
+    """function that returns True if the object is an instance of
+    a class that inherited (directly or indirectly) from the
+    specified class ; otherwise False."""
+    if a_class == type(obj):
+        return False
+    return isinstance(obj, a_class)
