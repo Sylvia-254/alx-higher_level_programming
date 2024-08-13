@@ -1,29 +1,20 @@
 #!/usr/bin/node
-
+// Number of films with the given character ID
 const request = require('request');
+let num = 0;
 
-const apiUrl = process.argv[2];
-const characterId = '18';
-
-request.get(apiUrl, (error, response, body) => {
+request.get(process.argv[2], (error, response, body) => {
   if (error) {
-    console.error(error);
-    return;
-  }
-  if (response.statusCode !== 200) {
-    console.error(`Error: ${response.statusCode}`);
-    return;
-  }
-  try {
-    const films = JSON.parse(body).results;
-    let count = 0;
-    films.forEach(film => {
-      if (film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)) {
-        count++;
-      }
+    console.log(error);
+  } else {
+    const content = JSON.parse(body);
+    content.results.forEach((film) => {
+      film.characters.forEach((character) => {
+        if (character.includes(18)) {
+          num += 1;
+        }
+      });
     });
-    console.log(count);
-  } catch (error) {
-    console.error('Error:', error.message);
+    console.log(num);
   }
 });
